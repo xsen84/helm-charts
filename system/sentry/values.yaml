@@ -27,14 +27,21 @@ workerReplicaCount: 1
 organizationName: Monsoon
 organizationSlug: monsoon
 image:
-  repository: sentry
-  tag: 9.1.2-r2
-  pullPolicy: IfNotPresent
+  sentry:
+    repository: sentry
+    tag: 9.1.2-r2
+    pullPolicy: IfNotPresent
+  snuba:
+    # repository: sentry
+    # tag: 9.1.2-r2
+    # pullPolicy: IfNotPresent
+
 service:
   name: sentry
   type: ClusterIP
   externalPort: 80
   internalPort: 9000
+
 pruning_time: '0315'
 
 ingress:
@@ -72,6 +79,95 @@ redis:
     requests:
       memory: 10Gi
       cpu: 2
+
+snuba:
+  api:
+    replicas: 1
+    env: []
+    probeInitialDelaySeconds: 10
+    resources: {}
+    affinity: {}
+    nodeSelector: {}
+    securityContext: {}
+    # tolerations: []
+    # podLabels: []
+
+    autoscaling:
+      enabled: false
+      minReplicas: 2
+      maxReplicas: 5
+      targetCPUUtilizationPercentage: 50
+    sidecars: [ ]
+    volumes: [ ]
+
+  consumer:
+    replicas: 1
+    env: []
+    resources: {}
+    affinity: {}
+    nodeSelector: {}
+    securityContext: {}
+    # tolerations: []
+    # podLabels: []
+
+  outcomesConsumer:
+    replicas: 1
+    env: []
+    resources: {}
+    affinity: {}
+    nodeSelector: {}
+    securityContext: {}
+    # tolerations: []
+    # podLabels: []
+
+  replacer:
+    replicas: 1
+    env: []
+    resources: {}
+    affinity: {}
+    nodeSelector: {}
+    securityContext: {}
+    # tolerations: []
+    # podLabels: []
+
+  sessionsConsumer:
+    replicas: 1
+    env: []
+    resources: {}
+    affinity: {}
+    nodeSelector: {}
+    securityContext: {}
+    # tolerations: []
+    # podLabels: []
+
+  transactionsConsumer:
+    replicas: 1
+    env: []
+    resources: {}
+    affinity: {}
+    nodeSelector: {}
+    securityContext: {}
+    # tolerations: []
+    # podLabels: []
+
+  dbInitJob:
+    env: []
+
+  migrateJob:
+    env: []
+
+  cleanupErrors:
+    enabled: true
+    schedule: "0 * * * *"
+    sidecars: []
+    volumes: []
+
+  cleanupTransactions:
+    enabled: true
+    schedule: "0 * * * *"
+    sidecars: []
+    volumes: []
+
 
 # Deploy Sentry Prometheus alerts.
 alerts:
