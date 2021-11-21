@@ -14,7 +14,7 @@ data:
 {{ include (print .Template.BasePath "/etc/_manila.conf.tpl") . | indent 4 }}
   api-paste.ini: |
 {{ include (print .Template.BasePath "/etc/_api-paste.ini.tpl") . | indent 4 }}
-  policy.json: |
+  policy.yaml: |
 {{ include (print .Template.BasePath "/etc/_manila-policy.json.tpl") . | indent 4 }}
   logging.ini: |
 {{ include "loggerIni" .Values.logging | indent 4 }}
