@@ -3,7 +3,7 @@
 function start_tempest_tests {
 
   echo -e "\n === PRE-CONFIG STEP  === \n"
-
+  
   export OS_USERNAME={{ default "neutron-tempestadmin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_name | quote }}
   export OS_TENANT_NAME={{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_project_name | quote }}
   export OS_PROJECT_NAME={{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_project_name | quote }}
@@ -65,6 +65,8 @@ function start_tempest_tests {
 {{- define "tempest-base.function_main" }}
 
 main() {
+  set -x
+
   start_tempest_tests
   # check if rally had a problem, if not grab the failures and eventually set the exit code for tempest results
   if [[ $RALLY_EXIT_CODE -eq 0 && $(rally verify show --uuid $(rally verify list | grep "tempest" | awk '{ print $2 }') --detailed | grep -E "Failures" | awk '{ print $4 }') -gt 0 ]]; then 
