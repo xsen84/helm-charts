@@ -13,7 +13,7 @@ function cleanup_tempest_leftovers() {
     TEMPESTPROJECT=neutron-tempest-admin$COUNTER
     export OS_TENANT_NAME=$TEMPESTPROJECT
     export OS_PROJECT_NAME=$TEMPESTPROJECT
-    for lb in $(openstack loadbalancer list -f json | jq -r .[].id); do openstack loadbalancer delete --cascade $lb -f json; done
+#    for lb in $(openstack loadbalancer list -f json | jq -r .[].id); do openstack loadbalancer delete $lb -f json; done
   done
 }
 
