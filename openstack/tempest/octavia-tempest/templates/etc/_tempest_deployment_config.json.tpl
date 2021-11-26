@@ -7,7 +7,6 @@
             "username": "neutron-tempestadmin1",
             "password": {{ .Values.tempestAdminPassword | quote }},
             "user_domain_name": "tempest",
-            "domain_name": "tempest",
             "tenant_name": "tempest"
     },
     "users": [
