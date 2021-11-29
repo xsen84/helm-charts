@@ -29,7 +29,7 @@ function start_tempest_tests {
   # check if we can reach openstack endpoints
   rally deployment check
   RALLY_EXIT_CODE=$(($RALLY_EXIT_CODE + $?))
-
+  cat /octavia-tempest-etc/tempest_deployment_config.json
   # create tempest verifier fetched from our repo
   rally --debug verify create-verifier --type tempest --name {{ .Chart.Name }}-verifier --system-wide --source https://github.com/sapcc/tempest --version ccloud-train
   RALLY_EXIT_CODE=$(($RALLY_EXIT_CODE + $?))
