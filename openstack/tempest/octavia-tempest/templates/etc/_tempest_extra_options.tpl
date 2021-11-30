@@ -59,8 +59,8 @@ security_compliance = True
 
 [service_available]
 manila = False
-neutron = False
-cinder = False
+neutron = True
+cinder = True
 glance = True
 nova = True
 swift = False
