@@ -42,7 +42,7 @@ function start_tempest_tests {
   echo -e "\n === STARTING TEMPEST TESTS FOR {{ .Chart.Name }} === \n"
   env | grep OS_
   openstack image list
-  apt-get install wget -y
+  sudo apt-get install wget -y
   wget http://download.cirros-cloud.net/0.3.5/cirros-0.3.5-x86_64-disk.img
   openstack image create "cirros" \
   --file cirros-0.3.5-x86_64-disk.img \
