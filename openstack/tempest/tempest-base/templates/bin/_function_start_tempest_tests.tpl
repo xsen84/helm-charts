@@ -43,9 +43,9 @@ function start_tempest_tests {
   env | grep OS_
   openstack image list
   sudo apt-get install wget -y
-  wget http://download.cirros-cloud.net/0.3.5/cirros-0.3.5-x86_64-disk.img
+  wget http://download.cirros-cloud.net/0.3.5/cirros-0.3.5-x86_64-disk.img -P $HOME
   openstack image create "cirros" \
-  --file cirros-0.3.5-x86_64-disk.img \
+  --file $HOME/cirros-0.3.5-x86_64-disk.img \
   --disk-format qcow2 --container-format bare \
   --public
   openstack image delete cirros
