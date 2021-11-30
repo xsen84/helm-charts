@@ -1,4 +1,3 @@
-{{- define "tempest-base.extra_options" }}
 [DEFAULT]
 debug = True
 use_stderr = True
@@ -118,16 +117,14 @@ disk_format = vmdk
 backup = true
 
 [service_available]
-manila = False
+manila = True
 neutron = True
 cinder = True
 glance = True
 nova = True
-swift = False
+swift = True
 designate = True
-ironic = False
-barbican = False
+ironic = True
+barbican = True
 keystone = True
 octavia = True
-
-{{ end }}
