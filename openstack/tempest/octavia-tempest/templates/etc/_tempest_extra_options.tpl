@@ -48,6 +48,10 @@ disable_ssl_certificate_validation = True
 auth_version = v3
 admin_role = admin
 
+[load_balancer]
+admin_role = admin
+
+
 [identity-feature-enabled]
 domain_specific_drivers = True
 project_tags = True
