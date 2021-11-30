@@ -128,5 +128,6 @@ designate = True
 ironic = True
 barbican = True
 keystone = True
+octavia = True
 
 {{ end }}
