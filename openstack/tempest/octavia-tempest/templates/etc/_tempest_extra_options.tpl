@@ -117,8 +117,8 @@ disk_format = vmdk
 backup = true
 
 [load_balancer]
-admin_role = admin
-observer_role = admin
+admin_role = cloud_network_admin
+observer_role = cloud_network_admin
 
 [service_available]
 manila = False
