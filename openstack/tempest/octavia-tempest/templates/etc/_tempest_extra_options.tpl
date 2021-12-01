@@ -116,6 +116,9 @@ disk_format = vmdk
 [volume-feature-enabled]
 backup = true
 
+[loadbalancer]
+admin_role = cloud_network_admin
+
 [service_available]
 manila = False
 neutron = True
