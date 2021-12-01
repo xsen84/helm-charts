@@ -3,11 +3,13 @@
 function start_tempest_tests {
 
   echo -e "\n === PRE-CONFIG STEP  === \n"
+  env grep | OS_
   export OS_USERNAME={{ default "neutron-tempestadmin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_name | quote }}
   export OS_TENANT_NAME={{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_project_name | quote }}
   export OS_PROJECT_NAME={{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_project_name | quote }}
   export IMAGE_REF=$(openstack image list | grep {{ default "cirros-vmware" (index .Values (print .Chart.Name | replace "-" "_")).tempest.image_ref }} | awk {' print $2 '})
   export IMAGE_REF_ALT=$(openstack image list | grep {{ default "ubuntu-16.04-amd64-vmware" (index .Values (print .Chart.Name | replace "-" "_")).tempest.image_ref_alt }} | awk {' print $2 '})
+  env | grep OS
   cp /{{ .Chart.Name }}-etc/tempest_extra_options /tmp
   sed -i "s/CHANGE_ME_IMAGE_REF/$(echo $IMAGE_REF)/g" /tmp/tempest_extra_options
   sed -i "s/CHANGEMEIMAGEREFALT/$(echo $IMAGE_REF_ALT)/g" /tmp/tempest_extra_options
@@ -25,7 +27,7 @@ function start_tempest_tests {
   # configure deployment for current region with existing users
   rally deployment create --file /{{ .Chart.Name }}-etc/tempest_deployment_config.json --name tempest_deployment
   RALLY_EXIT_CODE=$(($RALLY_EXIT_CODE + $?))
-
+  cat /{{ .Chart.Name }}-etc/tempest_deployment_config.json
   # check if we can reach openstack endpoints
   rally deployment check
   RALLY_EXIT_CODE=$(($RALLY_EXIT_CODE + $?))
@@ -35,6 +37,7 @@ function start_tempest_tests {
 
   # configure tempest verifier taking into account the auth section values provided in tempest_extra_options file
   # use config file from PRE_CONFIG STEP from /tmp directory
+  cat /tmp/tempest_extra_options
   rally --debug verify configure-verifier --extend /tmp/tempest_extra_options
   RALLY_EXIT_CODE=$(($RALLY_EXIT_CODE + $?))
 
