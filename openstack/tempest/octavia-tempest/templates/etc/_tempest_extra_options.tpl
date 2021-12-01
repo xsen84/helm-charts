@@ -8,12 +8,12 @@ rally_debug = True
 use_dynamic_credentials = False
 create_isolated_networks = False
 test_accounts_file = /{{ .Chart.Name }}-etc/tempest_accounts.yaml
-admin_username = admin
+default_credentials_domain_name = tempest
+admin_project_name = {{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_project_name }}
+admin_username = {{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_name }}
 admin_password = {{ required "A valid .Values.tempestAdminPassword required!" .Values.tempestAdminPassword }}
-admin_project_name = admin
 admin_domain_name = tempest
 admin_domain_scope = True
-default_credentials_domain_name = tempest
 
 [share]
 share_network_id = {{ (index .Values (print .Chart.Name | replace "-" "_")).tempest.share_network_id }}
@@ -46,11 +46,20 @@ default_domain_id = {{ .Values.tempest_common.domainId }}
 admin_domain_scope = True
 disable_ssl_certificate_validation = True
 auth_version = v3
+username = {{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_name }}
+password = {{ required "A valid .Values.tempestAdminPassword required!" .Values.tempestAdminPassword }}
+domain_name = tempest
 admin_role = admin
+admin_domain_name = tempest
+admin_username = {{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_name }}
+admin_password = {{ required "A valid .Values.tempestAdminPassword required!" .Values.tempestAdminPassword }}
+catalog_type = identity
+user_unique_last_password_count = 5
+user_lockout_duration = 300
+user_lockout_failure_attempts = 5
 
 [load_balancer]
 admin_role = cloud_network_admin
-observer_role = cloud_network_admin
 
 [identity-feature-enabled]
 domain_specific_drivers = True
