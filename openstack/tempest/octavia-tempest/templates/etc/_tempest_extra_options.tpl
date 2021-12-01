@@ -49,8 +49,8 @@ auth_version = v3
 admin_role = admin
 
 [load_balancer]
-admin_role = admin
-
+admin_role = cloud_network_admin
+observer_role = cloud_network_admin
 
 [identity-feature-enabled]
 domain_specific_drivers = True
