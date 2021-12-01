@@ -116,7 +116,7 @@ disk_format = vmdk
 [volume-feature-enabled]
 backup = true
 
-[load-balancer]
+[load_balancer]
 admin_role = admin
 
 [service_available]
