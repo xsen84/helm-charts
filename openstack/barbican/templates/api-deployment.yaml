@@ -57,6 +57,10 @@ spec:
                   name: sentry
                   key: barbican.DSN.python
             {{- end }}
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/bash", "/scripts/barbican_lunaclient.sh"]
           {{- if .Values.api.resources.enabled }}
           resources:
             limits:
@@ -159,6 +163,6 @@ spec:
         - name: hsm
           configMap:
             name: barbican-etc
-            defaultMode: 0744
+            defaultMode: 0744     
         - name: etcbarbican
           emptyDir: {}

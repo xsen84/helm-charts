@@ -22,7 +22,9 @@ lunaclient () {
     $MIN_CLIENT_DIR/bin/64/configurator setValue -s "Secure Trusted Channel" -e SoftTokenDir -v /root/luna-docker/config/stc/token
     $MIN_CLIENT_DIR/bin/64/configurator setValue -s "Secure Trusted Channel" -e ClientIdentitiesDir -v /root/luna-docker/config/stc/client_identities
     $MIN_CLIENT_DIR/bin/64/configurator setValue -s "Secure Trusted Channel" -e PartitionIdentitiesDir -v /root/luna-docker/config/stc/partition_identities
-    $MIN_CLIENT_DIR/bin/64/vtl createCert -n hsm01_qade2_luna_container
+    cp /root/luna-docker/config/Chrystoki.conf /etc/Chrystoki.conf
+    ln /root/luna-docker/LunaClient-Minimal-10.4.0-417.x86_64/libs/64/libCryptoki2.so /usr/lib/libcrystoki2.so
+    rm /root/luna-docker/610-000401-004_SW_Linux_Luna_Minimal_Client_V10.4.0_RevA.tar
     }
 {{- if eq .Values.hsm.enabled true }}
 lunaclient
