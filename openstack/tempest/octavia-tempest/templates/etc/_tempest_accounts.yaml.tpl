@@ -11,7 +11,7 @@
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest-admin2
   types:
-  - primary
+  - admin
   roles:
   - cloud_network_admin
   - admin
