@@ -1,9 +1,10 @@
 {{- define "tempest-base.function_start_tempest_tests" }}
 
 function start_tempest_tests {
-  python --version
-  pip3 info rally
-  pip3 info rally-openstack
+  python3 --version
+  pip3 show rally
+  pip3 show rally-openstack
+  rally version
   echo -e "\n === PRE-CONFIG STEP  === \n"
   export OS_USERNAME={{ default "neutron-tempestadmin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_name | quote }}
   export OS_TENANT_NAME={{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_project_name | quote }}
