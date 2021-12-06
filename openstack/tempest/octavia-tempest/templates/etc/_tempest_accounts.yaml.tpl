@@ -4,6 +4,5 @@
   roles:
   - cloud_network_admin
   types:
-  - primary
   - admin
   username: neutron-tempestadmin1
