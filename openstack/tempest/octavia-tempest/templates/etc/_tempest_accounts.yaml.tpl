@@ -7,8 +7,6 @@
   - observer_role
   - member_role
   - global_observer_role
-  - primary
-  - admin
   types:
   - primary
   - admin
