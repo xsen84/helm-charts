@@ -7,6 +7,8 @@ metadata:
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
+  requires:
+  - monsoon3/domain-tempest-seed
   rbac_policies:
   - target_tenant_name: neutron-tempest-admin1@tempest
     object_type: network
