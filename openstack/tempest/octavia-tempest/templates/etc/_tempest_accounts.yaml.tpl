@@ -8,6 +8,7 @@
   - member_role
   - global_observer_role
   - primary
-  types:
   - admin
+  types:
+  - primary
   username: neutron-tempestadmin1
