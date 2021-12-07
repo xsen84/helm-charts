@@ -11,4 +11,5 @@
   - admin
   types:
   - primary
+  - admin
   username: neutron-tempestadmin1
