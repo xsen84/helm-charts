@@ -3,11 +3,9 @@
   project_name: neutron-tempest-admin1
   roles:
   - cloud_network_admin
-  - admin_role
   - observer_role
   - member_role
   - global_observer_role
   types:
   - primary
-  - admin
   username: neutron-tempestadmin1
