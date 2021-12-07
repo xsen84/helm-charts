@@ -2,5 +2,5 @@
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest-admin1
   types:
-  - primary
+  - admin
   username: neutron-tempestadmin1
