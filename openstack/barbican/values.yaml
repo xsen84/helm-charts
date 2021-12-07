@@ -197,4 +197,4 @@ alerts:
 
 # HSM-Barbican lunaclient
 hsm:
-  enabled: true
+  enabled: false
