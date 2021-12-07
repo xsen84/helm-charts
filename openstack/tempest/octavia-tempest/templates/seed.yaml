@@ -77,8 +77,12 @@ spec:
       role_assignments:
       - project: neutron-tempest-admin1
         role: admin
+      - project: neutron-tempest-admin1
+        role: cloud_network_admin
       - project: service
         role: admin
+      - domain: tempest
+        role: cloud_network_admin
       - domain: tempest
         role: admin
       - domain: tempest
