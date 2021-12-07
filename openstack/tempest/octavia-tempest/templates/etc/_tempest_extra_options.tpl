@@ -134,4 +134,3 @@ designate = True
 ironic = False
 barbican = True
 keystone = True
-octavia = True
