@@ -119,7 +119,7 @@ backup = true
 [load_balancer]
 admin_role = cloud_network_admin
 observer_role = cloud_network_admin
-octavia_svc_username = admin
+octavia_svc_username = neutron-tempestadmin1
 member_role = cloud_network_admin
 global_observer_role = cloud_network_admin
 
