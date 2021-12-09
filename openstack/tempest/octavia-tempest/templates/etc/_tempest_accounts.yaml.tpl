@@ -8,6 +8,7 @@
      - 'admin'
   roles:
     - 'admin'
+    - 'cloud_network_admin'
 - username: 'neutron-tempestadmin2'
   project_name: 'neutron-tempest-admin2'
   project_domain_name: 'tempest'
@@ -18,3 +19,4 @@
      - 'admin'
   roles:
     - 'admin'
+    - 'cloud_network_admin'
