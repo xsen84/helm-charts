@@ -7,6 +7,7 @@ set -o pipefail
 function cleanup_tempest_leftovers() {
 
   echo "Run cleanup"
+  sleep 200
   for user in neutron-tempestadmin1 neutron-tempestadmin2 neutron-tempestadmin3 neutron-tempestadmin4; do
     let COUNTER++
     export OS_USERNAME=$user
