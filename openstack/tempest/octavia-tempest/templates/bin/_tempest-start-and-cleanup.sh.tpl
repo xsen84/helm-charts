@@ -6,8 +6,13 @@ set -o pipefail
 
 function cleanup_tempest_leftovers() {
 
-  echo "Run cleanup"
-  sleep 200
+  echo " ============ Fetching Tempest logs ============ "
+  TEMPEST_LOG_FILE=$(find /home/rally/.rally/verification -iname tempest.log)
+  cat $TEMPEST_LOG_FILE
+
+  sleep 300
+
+  echo " ============ Running cleanup ============ "
   for user in neutron-tempestadmin1 neutron-tempestadmin2 neutron-tempestadmin3 neutron-tempestadmin4; do
     let COUNTER++
     export OS_USERNAME=$user
