@@ -20,3 +20,50 @@
   roles:
     - 'admin'
     - 'reader'
+- username: 'neutron-tempestadmin3'
+  project_name: 'neutron-tempest-admin3'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+  types:
+     - 'admin'
+  roles:
+    - 'admin'
+    - 'reader'
+- username: 'neutron-tempestadmin4'
+  project_name: 'neutron-tempest-admin4'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+  types:
+     - 'admin'
+  roles:
+    - 'admin'
+    - 'reader'
+- username: neutron-tempestuser1
+  project_name: 'neutron-tempest1'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+- username: neutron-tempestuser2
+  project_name: 'neutron-tempest2'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+- username: neutron-tempestuser3
+  project_name: 'neutron-tempest3'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+- username: neutron-tempestuser4
+  project_name: 'neutron-tempest4'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+
