@@ -66,4 +66,40 @@
   user_domain_name: 'tempest'
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
+- username: neutron-tempestuser5
+  project_name: 'neutron-tempest5'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+- username: neutron-tempestuser6
+  project_name: 'neutron-tempest6'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+- username: neutron-tempestuser7
+  project_name: 'neutron-tempest7'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+- username: neutron-tempestuser8
+  project_name: 'neutron-tempest8'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+- username: neutron-tempestuser9
+  project_name: 'neutron-tempest9'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+- username: neutron-tempestuser10
+  project_name: 'neutron-tempest10'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
 
