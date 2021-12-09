@@ -18,3 +18,23 @@
      - 'admin'
   roles:
     - 'admin'
+- username: 'neutron-tempestadmin3'
+  project_name: 'neutron-tempest-admin3'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+  types:
+     - 'admin'
+  roles:
+    - 'admin'
+- username: 'neutron-tempestadmin4'
+  project_name: 'neutron-tempest-admin4'
+  project_domain_name: 'tempest'
+  user_domain_name: 'tempest'
+  domain_name: 'tempest'
+  password: {{ .Values.tempestAdminPassword | quote }}
+  types:
+     - 'admin'
+  roles:
+    - 'admin'
