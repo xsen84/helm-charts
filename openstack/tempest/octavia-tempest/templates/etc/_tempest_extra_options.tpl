@@ -13,7 +13,7 @@ admin_password = {{ required "A valid .Values.tempestAdminPassword required!" .V
 admin_project_name = admin
 admin_project_domain_name = tempest
 admin_domain_name = tempest
-admin_domain_scope = False
+admin_domain_scope = True
 default_credentials_domain_name = tempest
 
 [identity]
