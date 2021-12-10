@@ -36,7 +36,7 @@ function start_tempest_tests {
   # use config file from PRE_CONFIG STEP from /tmp directory
   rally --debug verify configure-verifier --extend /tmp/tempest_extra_options
   RALLY_EXIT_CODE=$(($RALLY_EXIT_CODE + $?))
-
+  rally --debug verify configure-verifier --show
   # run the actual tempest tests for neutron
   echo -e "\n === STARTING TEMPEST TESTS FOR {{ .Chart.Name }} === \n"
   rally --debug verify start --concurrency {{ default "1" .Values.concurrency }} --detailed --pattern '{{ required "Missing run_pattern value!" .Values.run_pattern }}' --skip-list /{{ .Chart.Name }}-etc/tempest_skip_list.yaml --xfail-list /{{ .Chart.Name }}-etc/tempest_expected_failures_list.yaml
