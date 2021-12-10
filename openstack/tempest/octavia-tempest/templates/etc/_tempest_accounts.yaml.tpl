@@ -24,6 +24,7 @@
     network: share-service
   types:
     - admin
+    - reader
 
 - username: 'neutron-tempestadmin1'
   domain_name: tempest
@@ -33,6 +34,7 @@
     network: share-service
   types:
     - admin
+    - reader
 
 - username: 'neutron-tempestadmin2'
   domain_name: tempest
@@ -42,3 +44,4 @@
     network: share-service
   types:
     - admin
+    - reader
