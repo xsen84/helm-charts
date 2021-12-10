@@ -16,6 +16,9 @@ admin_domain_name = tempest
 admin_domain_scope = True
 default_credentials_domain_name = tempest
 
+[enforce_scope]
+keystone = True
+
 [identity]
 uri_v3 = http://{{ if .Values.global.clusterDomain }}keystone.{{.Release.Namespace}}.svc.{{.Values.global.clusterDomain}}{{ else }}keystone.{{.Release.Namespace}}.svc.kubernetes.{{.Values.global.region}}.{{.Values.global.tld}}{{end}}:5000/v3
 endpoint_type = internal
