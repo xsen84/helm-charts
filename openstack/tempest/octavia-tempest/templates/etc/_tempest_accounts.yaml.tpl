@@ -18,3 +18,19 @@
     network: share-service
   types:
     - admin
+- username: 'neutron-tempestadmin1'
+  domain_name: tempest
+  password: {{ .Values.tempestAdminPassword | quote }}
+  project_name: 'neutron-tempest-admin1'
+  resources:
+    network: share-service
+  types:
+    - admin
+- username: 'neutron-tempestadmin2'
+  domain_name: tempest
+  password: {{ .Values.tempestAdminPassword | quote }}
+  project_name: 'neutron-tempest-admin2'
+  resources:
+    network: share-service
+  types:
+    - admin
