@@ -45,6 +45,7 @@
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
   roles:
+    - 'admin'
     - 'reader'
 
 - username: neutron-tempestuser2
@@ -54,6 +55,7 @@
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
   roles:
+    - 'admin'
     - 'reader'
 
 - username: neutron-tempestuser3
@@ -63,6 +65,7 @@
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
   roles:
+    - 'admin'
     - 'reader'
 
 - username: neutron-tempestuser4
@@ -72,6 +75,7 @@
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
   roles:
+    - 'admin'
     - 'reader'
 
 - username: neutron-tempestuser5
@@ -81,6 +85,7 @@
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
   roles:
+    - 'admin'
     - 'reader'
 
 - username: neutron-tempestuser6
@@ -90,6 +95,7 @@
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
   roles:
+    - 'admin'
     - 'reader'
 
 - username: neutron-tempestuser7
@@ -99,6 +105,7 @@
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
   roles:
+    - 'admin'
     - 'reader'
 
 - username: neutron-tempestuser8
@@ -108,6 +115,7 @@
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
   roles:
+    - 'admin'
     - 'reader'
 
 - username: neutron-tempestuser9
@@ -117,6 +125,7 @@
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
   roles:
+    - 'admin'
     - 'reader'
 
 - username: neutron-tempestuser10
@@ -126,4 +135,6 @@
   domain_name: 'tempest'
   password: {{ .Values.tempestAdminPassword | quote }}
   roles:
+    - 'admin'
     - 'reader'
+
