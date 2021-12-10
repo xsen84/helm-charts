@@ -24,7 +24,6 @@
     network: share-service
   types:
     - admin
-    - reader
 
 - username: 'neutron-tempestadmin1'
   domain_name: tempest
@@ -33,6 +32,8 @@
   resources:
     network: share-service
   types:
+    - admin
+  roles:
     - admin
     - reader
 
@@ -43,5 +44,7 @@
   resources:
     network: share-service
   types:
+    - admin
+  roles:
     - admin
     - reader
