@@ -4,12 +4,18 @@
   password: {{ .Values.tempestAdminPassword | quote }}
   resources:
     network: share-service
+  roles:
+    - reader
+
 - username: 'tempestuser2'
   domain_name: 'tempest'
   project_name: 'tempest2'
   password: {{ .Values.tempestAdminPassword | quote }}
   resources:
     network: share-service
+  roles:
+    - reader
+
 - username: 'admin'
   domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
@@ -18,6 +24,7 @@
     network: share-service
   types:
     - admin
+
 - username: 'neutron-tempestadmin1'
   domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
@@ -26,6 +33,7 @@
     network: share-service
   types:
     - admin
+
 - username: 'neutron-tempestadmin2'
   domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
