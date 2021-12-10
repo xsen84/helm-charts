@@ -5,4 +5,4 @@
 run_pattern: octavia_tempest_plugin.tests.api
 # Optional
 # Concurrency default is 1
-concurrency: 2
+concurrency: 1
