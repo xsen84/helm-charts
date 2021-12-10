@@ -4,12 +4,14 @@ use_stderr = True
 rally_debug = True
 
 [auth]
-use_dynamic_credentials = False
-create_isolated_networks = False
-test_accounts_file = /{{ .Chart.Name }}-etc/tempest_accounts.yaml
+use_dynamic_credentials = True
+create_isolated_networks = True
+tempest_roles = ['admin','member','reader','network_admin']
+#test_accounts_file = /{{ .Chart.Name }}-etc/tempest_accounts.yaml
 admin_username = admin
 admin_password = {{ required "A valid .Values.tempestAdminPassword required!" .Values.tempestAdminPassword }}
 admin_project_name = admin
+admin_project_domain_name = tempest
 admin_domain_name = tempest
 admin_domain_scope = True
 default_credentials_domain_name = tempest
