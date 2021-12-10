@@ -1,9 +1,6 @@
 {{- define "tempest-base.function_start_tempest_tests" }}
 
 function start_tempest_tests {
-  ls -la
-  ls -la /etc
-  cat /octavia-tempest-etc/tempest_accounts.yaml
   echo -e "\n === PRE-CONFIG STEP  === \n"
   export OS_USERNAME={{ default "neutron-tempestadmin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_name | quote }}
   export OS_TENANT_NAME={{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_project_name | quote }}
