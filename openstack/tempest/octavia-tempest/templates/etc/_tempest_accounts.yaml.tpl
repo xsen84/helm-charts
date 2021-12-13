@@ -33,6 +33,8 @@
   types:
   - admin
   - reader
+  roles:
+  - member_role
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest2
@@ -40,6 +42,8 @@
   types:
   - admin
   - reader
+  roles:
+  - member_role
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest3
@@ -47,6 +51,8 @@
   types:
   - admin
   - reader
+  roles:
+  - observer_role
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest4
@@ -54,6 +60,8 @@
   types:
   - admin
   - reader
+  roles:
+  - observer_role
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest5
@@ -62,7 +70,7 @@
   - admin
   - reader
   roles:
-  - load-balancer_global_observer
+  - global_observer
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest6
@@ -70,7 +78,7 @@
   types:
   - admin
   roles:
-  - load-balancer_global_observer
+  - global_observer
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest7
