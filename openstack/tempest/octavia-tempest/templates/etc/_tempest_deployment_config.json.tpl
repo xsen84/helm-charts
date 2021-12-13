@@ -4,7 +4,7 @@
         "region_name": "{{ .Values.global.region }}",
         "endpoint_type": "internal",
         "admin": {
-            "username": "admin",
+            "username": "neutron-tempestadmin1",
             "password": {{ .Values.tempestAdminPassword | quote }},
             "user_domain_name": "tempest",
             "domain_name": "tempest"

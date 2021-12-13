@@ -7,29 +7,28 @@ rally_debug = True
 use_dynamic_credentials = False
 create_isolated_networks = False
 test_accounts_file = /{{ .Chart.Name }}-etc/tempest_accounts.yaml
-admin_username = admin
+default_credentials_domain_name = tempest
+admin_project_name = {{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_project_name }}
+admin_username = {{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_name }}
 admin_password = {{ required "A valid .Values.tempestAdminPassword required!" .Values.tempestAdminPassword }}
-admin_project_name = admin
-admin_project_domain_name = tempest
 admin_domain_name = tempest
 admin_domain_scope = True
-default_credentials_domain_name = tempest
 
 [identity]
 uri_v3 = http://{{ if .Values.global.clusterDomain }}keystone.{{.Release.Namespace}}.svc.{{.Values.global.clusterDomain}}{{ else }}keystone.{{.Release.Namespace}}.svc.kubernetes.{{.Values.global.region}}.{{.Values.global.tld}}{{end}}:5000/v3
 endpoint_type = internal
 v3_endpoint_type = internal
 region = {{ .Values.global.region }}
-default_domain_id = default
+default_domain_id = {{ .Values.tempest_common.domainId }}
 admin_domain_scope = True
 disable_ssl_certificate_validation = True
 auth_version = v3
-username = admin
+username = {{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_name }}
 password = {{ required "A valid .Values.tempestAdminPassword required!" .Values.tempestAdminPassword }}
 domain_name = tempest
 admin_role = admin
 admin_domain_name = tempest
-admin_username = admin
+admin_username = {{ default "neutron-tempest-admin1" (index .Values (print .Chart.Name | replace "-" "_")).tempest.admin_name }}
 admin_password = {{ required "A valid .Values.tempestAdminPassword required!" .Values.tempestAdminPassword }}
 catalog_type = identity
 user_unique_last_password_count = 5
@@ -118,18 +117,19 @@ disk_format = vmdk
 backup = true
 
 [load_balancer]
-admin_role = admin
-octavia_svc_username = admin
-member_role = admin
+admin_role = cloud_network_admin
+octavia_svc_username = cloud_network_admin
+member_role = cloud_network_admin
 
 [service_available]
-manila = False
+manila = True
 neutron = True
 cinder = True
 glance = True
 nova = True
 swift = True
 designate = True
-ironic = False
+ironic = True
 barbican = True
 keystone = True
+octavia = True
