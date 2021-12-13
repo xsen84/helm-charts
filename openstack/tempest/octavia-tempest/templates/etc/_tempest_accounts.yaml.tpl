@@ -6,6 +6,11 @@
     network: share-service
   roles:
     - reader
+    - lb_admin
+    - lb_observer
+    - lb_global_observer
+    - lb_member
+    - lb_member2
 
 - username: 'tempestuser2'
   domain_name: 'tempest'
@@ -15,6 +20,11 @@
     network: share-service
   roles:
     - reader
+    - lb_admin
+    - lb_observer
+    - lb_global_observer
+    - lb_member
+    - lb_member2
 
 - username: 'admin'
   domain_name: tempest
@@ -22,6 +32,12 @@
   project_name: 'admin'
   resources:
     network: share-service
+  roles:
+    - lb_admin
+    - lb_observer
+    - lb_global_observer
+    - lb_member
+    - lb_member2
   types:
     - admin
 
@@ -36,6 +52,11 @@
   roles:
     - admin
     - reader
+    - lb_admin
+    - lb_observer
+    - lb_global_observer
+    - lb_member
+    - lb_member2
 
 - username: 'neutron-tempestadmin2'
   domain_name: tempest
@@ -48,3 +69,8 @@
   roles:
     - admin
     - reader
+    - lb_admin
+    - lb_observer
+    - lb_global_observer
+    - lb_member
+    - lb_member2
