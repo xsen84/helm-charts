@@ -809,6 +809,8 @@ spec:
         role: member
       - project: neutron-tempest1
         role: resource_admin
+      - project: neutron-tempest1
+        role: member
     - name: neutron-tempestuser2
       description: Neutron Tempest Test User 2
       password: {{ required "Missing tempestAdminPassword value!" .Values.tempestAdminPassword | quote }}
@@ -823,6 +825,8 @@ spec:
         role: member
       - project: neutron-tempest2
         role: resource_admin
+      - project: neutron-tempest2
+        role: member
     - name: neutron-tempestuser3
       description: Neutron Tempest Test User 3
       password: {{ required "Missing tempestAdminPassword value!" .Values.tempestAdminPassword | quote }}
@@ -837,6 +841,8 @@ spec:
         role: member
       - project: neutron-tempest3
         role: resource_admin
+      - project: neutron-tempest3
+        role: observer
     - name: neutron-tempestuser4
       description: Neutron Tempest Test User 4
       password: {{ required "Missing tempestAdminPassword value!" .Values.tempestAdminPassword | quote }}
@@ -851,6 +857,8 @@ spec:
         role: member
       - project: neutron-tempest4
         role: resource_admin
+      - project: neutron-tempest4
+        role: observer
     - name: neutron-tempestuser5
       description: Neutron Tempest Test User 5
       password: {{ required "Missing tempestAdminPassword value!" .Values.tempestAdminPassword | quote }}
@@ -865,6 +873,8 @@ spec:
         role: member
       - project: neutron-tempest5
         role: resource_admin
+      - project: neutron-tempest5
+        role: global_observer
     - name: neutron-tempestuser6
       description: Neutron Tempest Test User 6
       password: {{ required "Missing tempestAdminPassword value!" .Values.tempestAdminPassword | quote }}
@@ -879,6 +889,8 @@ spec:
         role: member
       - project: neutron-tempest6
         role: resource_admin
+      - project: neutron-tempest6
+        role: global_observer
     - name: neutron-tempestuser7
       description: Neutron Tempest Test User 7
       password: {{ required "Missing tempestAdminPassword value!" .Values.tempestAdminPassword | quote }}
@@ -907,6 +919,8 @@ spec:
         role: member
       - project: neutron-tempest8
         role: resource_admin
+      - project: neutron-tempest8
+        role: reader
     - name: neutron-tempestuser9
       description: Neutron Tempest Test User 9
       password: {{ required "Missing tempestAdminPassword value!" .Values.tempestAdminPassword | quote }}
@@ -935,3 +949,5 @@ spec:
         role: member
       - project: neutron-tempest10
         role: resource_admin
+      - project: neutron-tempest10
+        role: reader
