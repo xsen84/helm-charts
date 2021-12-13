@@ -122,7 +122,6 @@ admin_role = admin
 observer_role = admin
 octavia_svc_username = admin
 member_role = admin
-member_role2 = admin
 global_observer_role = admin
 
 [service_available]
