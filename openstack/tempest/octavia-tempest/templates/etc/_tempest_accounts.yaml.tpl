@@ -3,6 +3,8 @@
   project_name: neutron-tempest-admin1
   types:
   - admin
+  roles:
+  - admin
   username: neutron-tempestadmin1
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}

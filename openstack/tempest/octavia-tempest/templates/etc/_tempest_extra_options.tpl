@@ -117,7 +117,7 @@ disk_format = vmdk
 backup = true
 
 [load_balancer]
-admin_role = cloud_network_admin
+admin_role = admin
 octavia_svc_username = cloud_network_admin
 member_role = cloud_network_admin
 
