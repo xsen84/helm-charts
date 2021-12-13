@@ -15,14 +15,12 @@
   project_name: neutron-tempest-admin3
   types:
   - admin
-  - reader
   username: neutron-tempestadmin3
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest-admin4
   types:
   - admin
-  - reader
   username: neutron-tempestadmin4
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
@@ -84,6 +82,8 @@
   username: neutron-tempestuser8
   types:
   - admin
+  roles:
+    - reader
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest9
@@ -96,3 +96,5 @@
   username: neutron-tempestuser10
   types:
   - primary
+  roles:
+    - reader
