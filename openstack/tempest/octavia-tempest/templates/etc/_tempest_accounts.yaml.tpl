@@ -74,6 +74,7 @@
   username: neutron-tempestuser7
   types:
   - admin
+  roles:
   - reader
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
@@ -81,6 +82,7 @@
   username: neutron-tempestuser8
   types:
   - admin
+  roles:
   - reader
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
