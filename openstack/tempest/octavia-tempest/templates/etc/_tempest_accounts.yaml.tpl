@@ -87,12 +87,12 @@
   project_name: neutron-tempest9
   username: neutron-tempestuser9
   types:
-  - admin
+  - primary
   - reader
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest10
   username: neutron-tempestuser10
   types:
-  - admin
+  - primary
   - reader
