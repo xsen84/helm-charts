@@ -70,7 +70,7 @@
   - admin
   - reader
   roles:
-  - global_observer
+  - load-balancer_global_observer
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest6
@@ -78,7 +78,7 @@
   types:
   - admin
   roles:
-  - global_observer
+  - load-balancer_global_observer
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest7
