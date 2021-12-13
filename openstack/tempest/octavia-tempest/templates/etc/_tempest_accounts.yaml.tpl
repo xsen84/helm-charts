@@ -52,11 +52,7 @@
   roles:
     - admin
     - reader
-    - lb_admin
-    - lb_observer
-    - lb_global_observer
-    - lb_member
-    - lb_member2
+
 
 - username: 'neutron-tempestadmin2'
   domain_name: tempest
@@ -68,9 +64,3 @@
     - admin
   roles:
     - admin
-    - reader
-    - lb_admin
-    - lb_observer
-    - lb_global_observer
-    - lb_member
-    - lb_member2
