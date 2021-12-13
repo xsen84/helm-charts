@@ -120,6 +120,7 @@ backup = true
 admin_role = admin
 octavia_svc_username = cloud_network_admin
 member_role = cloud_network_admin
+observer_role = cloud_network_admin
 
 [service_available]
 manila = True
