@@ -117,13 +117,6 @@ disk_format = vmdk
 [volume-feature-enabled]
 backup = true
 
-[load_balancer]
-admin_role = admin
-observer_role = admin
-octavia_svc_username = admin
-member_role = admin
-global_observer_role = admin
-
 [service_available]
 manila = False
 neutron = True
