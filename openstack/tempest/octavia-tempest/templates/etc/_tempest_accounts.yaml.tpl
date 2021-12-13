@@ -26,6 +26,8 @@
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest1
   username: neutron-tempestuser1
+  types:
+  - primary
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest2
