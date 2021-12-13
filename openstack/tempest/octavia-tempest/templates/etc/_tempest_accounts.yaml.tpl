@@ -61,13 +61,16 @@
   types:
   - admin
   - reader
+  roles:
+  - load-balancer_global_observer
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest6
   username: neutron-tempestuser6
   types:
   - admin
-  - reader
+  roles:
+  - load-balancer_global_observer
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
   project_name: neutron-tempest7
