@@ -5,6 +5,7 @@
   - admin
   roles:
   - admin
+  - observer_role
   username: neutron-tempestadmin1
 - domain_name: tempest
   password: {{ .Values.tempestAdminPassword | quote }}
